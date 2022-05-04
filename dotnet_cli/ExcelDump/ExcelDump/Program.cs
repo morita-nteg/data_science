@@ -10,7 +10,12 @@ namespace ExcelDump
     {
         static void Main(string[] args)
         {
-            CSNPOIWrapper.ExcelReader.DumpConsole(args[0], 0);
+            List<string[]> lst = new List<string[]>();
+            lst.Add(new [] { "a1", "b1", "c1" });
+            lst.Add(new [] { "a2", "b1", "c2", "d2" });
+            CSNPOIWrapper.ExcelWriter.FromList("result.xlsx", "Sheet1", lst);
+            List<string[]> clst = CSNPOIWrapper.ExcelReader.GenerateListFromExcel("result.xlsx", "Sheet1");
+            clst.ForEach(elem => Console.WriteLine(String.Join(",", elem)));
         }
     }
 }

@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcelWriter.cs" />
     <Compile Include="ExcelReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
